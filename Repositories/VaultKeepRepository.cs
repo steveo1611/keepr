@@ -16,6 +16,8 @@ namespace Keepr.Repositories
         //AddKeep vaultkeep
         public VaultKeeps AddVK(VaultKeeps newvk)
         {
+            // need to first run sql statement to check if keepId is already connected to the vaultId
+            // this is to block adding same keeps to vault
             int id = _db.ExecuteScalar<int>(@"
                 INSERT INTO vaultkeeps (vaultId, keepId, userId)
                 VALUES (@vaultId, @keepId, @userId);

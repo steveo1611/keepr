@@ -18,7 +18,7 @@
             <ul class="vaultgroup">
               <li class="vaultlist" v-for="vault in vaults" :key='vault.id'>
               <form @submit.prevent="addtoVault(vault.id)">
-                <p class="vaultgrp">NAME: {{vault.name}}  </p>
+                <h5 class="vaultgrp">VAULT: {{vault.name}}  </h5>
                 <p class="vaultgrp">Description: {{vault.description}} </p>
                 <button class="btn btn-primary btn-success" type="submit">Select vault</button>
               </form>
