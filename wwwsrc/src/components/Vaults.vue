@@ -2,7 +2,7 @@
 <div class="vaults">
   <span v-if="$route.name == 'Vaults'">
     <div class="row justify-vaults-center">
-      <div class="col-6 card">
+      <div class="offset-md-3 col-6 card">
         <div class="vault">
           <h1>Create Vaults</h1>
           <form v-on:submit.prevent="addVault" class="form">
@@ -14,16 +14,15 @@
           <div>
             <h2>Vault List</h2>
              <ul>
-             <li v-for="vault in vaults" class="col-sm-12" :key="vault.id">
-               <form>
-               <p class="vaultgrp">NAME: {{vault.name}}  </p>
-              <p class="vaultgrp">Description: {{vault.description}} </p>
-              <button class="btn btn-primary btn-success" :value="vault.id"  @click="viewVault(vault)" type="submit">View Vault</button>
-              <button class="btn btn-primary btn-danger" :value="vault.id" @click="deleteVault(vault.id)" type="submit">Delete Vault</button>
-               </form>
-               <div>
+             <li v-for="vault in vaults" class="col-sm" :key="vault.id">
+              <h5 class="vaultgrp">{{vault.name}}  </h5>
+              <p class="vaultgrp">{{vault.description}} </p>
+              <button class="btn btn-success" :value="vault.id"  @click="viewVault(vault)" type="submit">View</button>
+              <button class="btn far fa-trash-alt" :value="vault.id" @click="deleteVault(vault.id)" type="submit"></button>
+              <div class="card-columns">
                  <div v-for="keep in vaultKeeps" v-if="activeVault == vault">
                    {{keep.name}}
+                   <img class = "card-img-top" width="150px" :src="keep.contentURL || './static/img/placehold.jpg'"> 
                  </div>
                </div>
                </li>

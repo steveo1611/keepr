@@ -2,7 +2,7 @@
   <div id="app">
         <nav class="navbar navbar-dark bg-primary top-header format">
         <div>
-          <img src="./assets/logo.png">
+          <!-- <img src="./assets/logo.png"> -->
         <router-link :to="{ name: 'Home'}" class="navbar-brand">
          <a>Home</a>
         </router-link>
